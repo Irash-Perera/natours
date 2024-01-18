@@ -4,6 +4,7 @@ import { displayMap } from './mapbox';
 import { updateSettings } from './updateSettings';
 import { passwordReset } from './passwordReset';
 import { signup } from './signup';
+import { forgotPassword } from './forgotPassword';
 
 //DOM ELEMNETS
 const mapBox = document.getElementById('map');
@@ -13,6 +14,7 @@ const userDataForm = document.querySelector('.form-user-data');
 const userSettings = document.querySelector('.form-user-settings');
 const resetPasswordForm = document.querySelector('.form--reset');
 const signupForm = document.querySelector('.form--signup');
+const forgotPasswordFrom = document.querySelector('.form--forgotPassword')
 
 if (mapBox) {
   const locations = JSON.parse(mapBox.dataset.locations);
@@ -50,6 +52,16 @@ if (resetPasswordForm) {
     const token = document.getElementById('token').value;
     passwordReset(newPassword, newPasswordConfirm, token)
   })
+}
+
+if (forgotPasswordFrom) {
+  forgotPasswordFrom.addEventListener('submit', e => {
+    e.preventDefault();
+    document.querySelector('.btn--forgot--password').textContent = 'Sending recovery mail...'
+    const email = document.getElementById('email').value;
+    forgotPassword(email);
+  })
+  document.querySelector('.btn--forgot--password').textContent = 'Next'
 }
 
 

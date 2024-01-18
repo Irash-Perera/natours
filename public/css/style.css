@@ -233,6 +233,7 @@ body {
 .btn--green {
   background-color: #55c57a;
   color: #fff;
+  justify-self:end;
 }
 
 .btn--red {

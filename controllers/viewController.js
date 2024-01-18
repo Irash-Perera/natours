@@ -76,3 +76,9 @@ exports.passwordReset = (req, res, next) => {
         title:'Reset Password'
     })
 }
+
+exports.forgotPassword = (req, res, next) => {
+    res.status(200).render('forgotPassword', {
+        title: 'Forgotten password'
+    });
+}

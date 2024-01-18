@@ -12,8 +12,16 @@ module.exports = class Email{
 
     newTransport() {
         if (process.env.NODE_ENV === 'production') {
-            //sendgrid
-            return 1;
+            //FIXME
+            //POSTMARK
+            return nodemailer.createTransport({
+                host: 'smtp.postmarkapp.com',
+                port: 25,
+                auth: {
+                    user: process.env.POSTMARK_USERNAME,
+                    pass:process.env.POSTMARK_PASSWORD,
+                }
+            })
         }
         return nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
