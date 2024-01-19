@@ -18,7 +18,7 @@ module.exports = class Email{
                 secure: false,
                 auth: {
                     user: "samaraweerairash@gmail.com",
-                    pass: "xsmtpsib-1702272c2d5d58384d03a6df5545e3598a54c1d5bd62078ae0a1f7e2ba85214d-mSfxb2Yq7JND68AO",
+                    pass: process.env.BREVO_KEY
                 },
             });
         }
