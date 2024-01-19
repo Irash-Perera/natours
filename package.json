@@ -4,7 +4,8 @@
   "description": "Welcome to Natours API Backend, a powerful system designed to manage and streamline tour operations for commercial tour organizing companies. This RESTful API provides robust functionality to handle various aspects of tour management, from creating, editing, and deleting tours to managing bookings and user authentication.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "start:dev": "nodemon server.js",
     "start:prod": "cross-env NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
@@ -52,6 +53,9 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node":">=10.0.0"
   },
   "keywords": []
 }
