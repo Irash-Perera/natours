@@ -1,7 +1,8 @@
 const Tour = require('./../models/tourModel');
+const Booking = require('./../models/bookingModel');
+const User = require('../models/userModel')
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('../utils/appError');
-const User = require('../models/userModel')
 
 exports.getOverview = catchAsync(async(req, res) => {
     // 1) Get tour data from the collection
@@ -55,6 +56,20 @@ exports.getAccount = (req, res) => {
     })
 }
 
+exports.getMyTours = catchAsync(async (req, res, next) => {
+    // 1) find all bookings
+    const bookings = await Booking.find({ user: req.user.id });
+
+    // 2) find tours relevent to those ids
+    const tourIds = bookings.map(el => el.tour);
+    const tours = await Tour.find({ _id: { $in: tourIds } });
+
+    res.status(200).render('overview',{
+        title: 'My tours',
+        tours
+    })
+})
+
 exports.updateUserData = catchAsync(async(req, res, next) => {
     const user = await User.findByIdAndUpdate(req.user.id, {
         name: req.body.name,
@@ -82,3 +97,4 @@ exports.forgotPassword = (req, res, next) => {
         title: 'Forgotten password'
     });
 }
+

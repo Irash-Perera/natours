@@ -5,6 +5,7 @@ import { updateSettings } from './updateSettings';
 import { passwordReset } from './passwordReset';
 import { signup } from './signup';
 import { forgotPassword } from './forgotPassword';
+import { bookTour } from './stripe';
 
 //DOM ELEMNETS
 const mapBox = document.getElementById('map');
@@ -15,6 +16,14 @@ const userSettings = document.querySelector('.form-user-settings');
 const resetPasswordForm = document.querySelector('.form--reset');
 const signupForm = document.querySelector('.form--signup');
 const forgotPasswordFrom = document.querySelector('.form--forgotPassword')
+const bookBtn = document.getElementById('book-tour')
+
+// Add this at the beginning of your index.js file or in a separate script file
+document.addEventListener('DOMContentLoaded', function() {
+  // Set the initial scroll position to the top of the page
+  window.scrollTo(0, 0);
+});
+
 
 if (mapBox) {
   const locations = JSON.parse(mapBox.dataset.locations);
@@ -101,6 +110,14 @@ if (userSettings) {
   document.getElementById('password-current').value = '';
   document.getElementById('password').value = '';
   document.getElementById('password-confirm').value = '';
+}
 
-
+if (bookBtn) {
+  console.log('Book button found!');
+  bookBtn.addEventListener('click', e => {
+    console.log('Book button clicked!');
+    e.target.textContent = 'Processing...'
+    const { tourId } = e.target.dataset;
+    bookTour(tourId)
+  })
 }
