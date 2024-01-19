@@ -12,16 +12,15 @@ module.exports = class Email{
 
     newTransport() {
         if (process.env.NODE_ENV === 'production') {
-            //FIXME
-            //POSTMARK
             return nodemailer.createTransport({
-                host: 'smtp.postmarkapp.com',
-                port: 25,
+                host: "smtp-relay.brevo.com",
+                port: 587,
+                secure: false,
                 auth: {
-                    user: process.env.POSTMARK_USERNAME,
-                    pass:process.env.POSTMARK_PASSWORD,
-                }
-            })
+                    user: "samaraweerairash@gmail.com",
+                    pass: "xsmtpsib-1702272c2d5d58384d03a6df5545e3598a54c1d5bd62078ae0a1f7e2ba85214d-JZwHMqXF2shd9rLp",
+                },
+            });
         }
         return nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
