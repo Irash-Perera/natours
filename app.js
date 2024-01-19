@@ -14,6 +14,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 //start express app
 const app = express();
 
@@ -70,6 +71,8 @@ app.use(hpp({
         'ratingsQuantity '
     ]
 }));
+
+app.use(compression())
 
 //requesting time
 app.use((req, res, next) => {

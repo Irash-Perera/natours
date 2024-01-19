@@ -68,8 +68,8 @@ exports.getMe = (req, res, next) => {
 }
 
 exports.updateMe = catchAsync(async (req, res, next) => {
-    console.log(req.file);
-    console.log(req.body);
+    // console.log(req.file);
+    // console.log(req.body);
     if (req.body.password || req.body.passwordConfirm) {
         return next(new AppError('Password cannot be changed in this route. Update your password on /updatePassword', 400));
     };
@@ -83,7 +83,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
         new: true,
         runValidators: true
     })
-    console.log(filteredObj)
+    // console.log(filteredObj)
     
     res.status(200).json({
         status: 'success',

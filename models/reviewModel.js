@@ -65,7 +65,7 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {
         ratingsQuantity: stats[0].nRating,
         ratingsAverage: stats[0].avgRating
     })
-    console.log(stats)
+    // console.log(stats)
 };
 
 reviewSchema.post('save', function () {

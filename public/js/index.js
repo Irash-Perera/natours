@@ -88,7 +88,7 @@ if (userDataForm) {
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
 
-    console.log(form)
+    // console.log(form)
 
     await updateSettings(form, 'data')
     window.setTimeout(() => {
@@ -113,9 +113,7 @@ if (userSettings) {
 }
 
 if (bookBtn) {
-  console.log('Book button found!');
   bookBtn.addEventListener('click', e => {
-    console.log('Book button clicked!');
     e.target.textContent = 'Processing...'
     const { tourId } = e.target.dataset;
     bookTour(tourId)
