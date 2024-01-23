@@ -1,4 +1,5 @@
 import '@babel/polyfill';
+import axios from 'axios';
 import { login,logout} from './login';
 import { displayMap } from './mapbox';
 import { updateSettings } from './updateSettings';
@@ -6,6 +7,7 @@ import { passwordReset } from './passwordReset';
 import { signup } from './signup';
 import { forgotPassword } from './forgotPassword';
 import { bookTour } from './stripe';
+import { submitReview } from './review';
 
 //DOM ELEMNETS
 const mapBox = document.getElementById('map');
@@ -17,6 +19,9 @@ const resetPasswordForm = document.querySelector('.form--reset');
 const signupForm = document.querySelector('.form--signup');
 const forgotPasswordFrom = document.querySelector('.form--forgotPassword')
 const bookBtn = document.getElementById('book-tour')
+const bookAgainBtn = document.querySelector('.book-again-btn')
+const reviewForm = document.querySelector('.form--reviewForm')
+const starGroup = document.querySelector('.star-group')
 
 // Add this at the beginning of your index.js file or in a separate script file
 document.addEventListener('DOMContentLoaded', function() {
@@ -119,3 +124,28 @@ if (bookBtn) {
     bookTour(tourId)
   })
 }
+
+if (bookAgainBtn) {
+  bookAgainBtn.addEventListener('click', e => {
+    window.setTimeout(() => {
+      location.assign('/')
+    }, 0)
+  })
+}
+
+if (reviewForm) {
+  let rating;
+  reviewForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const review = document.getElementById('_review').value;
+    if (starGroup) {
+      starGroup.addEventListener('click', e => {
+        rating = e.target.value;
+        console.log(review, rating)
+      })
+    }
+    await submitReview(review, rating);
+  })
+  
+}
+

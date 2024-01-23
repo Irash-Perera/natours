@@ -35,8 +35,10 @@ exports.getTour = catchAsync(async(req, res, next) => {
         .render('tour', {
         title: tour.name,
         tour
+        
     });
 });
+
 
 exports.login = (req, res) => {
     res.status(200).render('login', {
@@ -59,14 +61,15 @@ exports.getAccount = (req, res) => {
 exports.getMyTours = catchAsync(async (req, res, next) => {
     // 1) find all bookings
     const bookings = await Booking.find({ user: req.user.id });
+    // console.log(bookings[0])
 
     // 2) find tours relevent to those ids
     const tourIds = bookings.map(el => el.tour);
     const tours = await Tour.find({ _id: { $in: tourIds } });
 
-    res.status(200).render('overview',{
+    res.status(200).render('bookings',{
         title: 'My tours',
-        tours
+        bookings
     })
 })
 
@@ -97,4 +100,14 @@ exports.forgotPassword = (req, res, next) => {
         title: 'Forgotten password'
     });
 }
+
+exports.postReview = catchAsync(async (req, res, next) => {
+    const tour = await Tour.findOne({ _id: req.params.tourId });
+    const user = req.user;
+    res.status(200).render('review', {
+        title: 'Post a review',
+        tour,
+        user
+    })
+})
 

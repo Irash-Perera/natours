@@ -78,7 +78,7 @@ block content
     .reviews
       each review in tour.reviews
         +reviewCard(review)
-        
+
 
   section.section-cta
     .cta
@@ -93,3 +93,13 @@ block content
           button.btn.btn--green.span-all-rows#book-tour(data-tour-id=`${tour.id}`) Book tour now!
         else 
           a.btn.btn--green.span-all-rows(href='/login') Login to book tour
+
+  section.section-reviewForm
+    .login-form
+      h2.heading-secondary.ma-bt-lg Wanna share your thoughts?
+      form.form--reviewForum
+        .form__group
+          if user
+            a.button.btn.btn--green(href=`/post-review/${tour.id}`) Share with us
+          else 
+            a.button.btn.btn--green(href='/login') Login to share your thoughts

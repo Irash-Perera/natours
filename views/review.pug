@@ -1,0 +1,20 @@
+extends base
+
+block content 
+  main.main
+    .login-form(data-tour-id=tour._id, data-user-id=user._id,data-tour-slug=tour.slug)
+      link(rel='stylesheet' href='/css/reviewEmoji.css')
+      h2.heading-secondary.ma-bt-lg Leave your review here
+      form.form--reviewForm
+        .form__group
+          label.form__label(for='review') Review
+          input#_review.form__input(type='text', placeholder='', required)
+        .form__group
+          .star-group
+            input.star(type='radio' name='star_rating' value='1' id='one')
+            input.star(type='radio' name='star_rating' value='2' id='two')
+            input.star(type='radio' name='star_rating' value='3' id='three')
+            input.star(type='radio' name='star_rating' value='4' id='four')
+            input.star(type='radio' name='star_rating' value='5' id='five' checked='')
+        .form__group
+          button.btn.btn--green Post

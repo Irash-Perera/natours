@@ -28,7 +28,16 @@ const bookingSchema = new mongoose.Schema({
     default: true
   }
 
-});
+},
+  {
+    toJSON: {
+      virtuals: true
+    },
+    toObject: {
+      virtuals: true
+    }
+  }
+);
 
 bookingSchema.pre(/^find/, function (next) {
   this.populate({
@@ -41,6 +50,7 @@ bookingSchema.pre(/^find/, function (next) {
 
   next();
 })
+
 
 const Booking = mongoose.model('Booking', bookingSchema);
 
