@@ -1,0 +1,53 @@
+extends base
+
+block content
+  
+  main.main
+    .user-view
+      nav.user-view__menu
+        ul.side-nav
+          +navItem('/me', 'Settings','settings')
+          +navItem('/my-tours', 'My bookings','briefcase')
+          +navItem('/my-reviews', 'My reviews','star',true)
+          +navItem('#', 'Billing','credit-card')
+        -if(user.role === 'admin')
+          .admin-nav
+            h5.admin-nav__heading Admin
+            ul.side-nav
+              +navItem('#', 'Manage tours','map')
+              +navItem('#', 'Manage users','users')
+              +navItem('#', 'Manage reviews','star')
+              +navItem('#', 'Manage Bookings','briefcase')
+      
+
+      .user-view__content
+          h2.heading-secondary.ma-bt-md My reviews
+          
+          //WITHOUT API
+          //- form.form.form-user-data(action='/update-user-data', method='POST', enctype='multipart/form--data')
+
+        link(rel='stylesheet' href='/css/bookingsTable.css')
+        link(rel='stylesheet' href='/css/button.css')
+        .container 
+          ul.responsive-table 
+            li.table-header 
+              .col.col-1 Tour name
+              .col.col-2 Review
+              .col.col-3 Rating
+              .col.col-4 Posted on
+              .col.col-5 Action
+
+            each review in reviews
+              li.table-row
+                .overlay
+                .col.col-1(data-label='Tour name')= `${review.tour.name} Tour`
+                .col.col-2(data-label='Review')= `${review.review}`
+                .col.col-3(data-label='Rating')= `${review.rating}`
+                .col.col-4(data-label='Posted on')= `${review.createdAt.toLocaleString('en-us')}`
+                .col.col-5(data-label='Action')
+                  button.update-review-btn#update-review(data-review-id=`${review.id}`) Update
+                  |
+                  button.delete-btn#delete-review(data-review-id=`${review.id}`) Delete
+        .line &nbsp;
+
+        

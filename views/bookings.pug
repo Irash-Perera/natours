@@ -16,7 +16,7 @@ block content
         ul.side-nav
           +navItem('/me', 'Settings','settings')
           +navItem('/my-tours', 'My bookings','briefcase', true)
-          +navItem('#', 'My reviews','star')
+          +navItem('/my-reviews', 'My reviews','star')
           +navItem('#', 'Billing','credit-card')
         -if(user.role === 'admin')
           .admin-nav
@@ -47,7 +47,7 @@ block content
               .col.col-4 Booked On
               
             each booking in bookings
-              li.table-row
+              li.table-row(style=`background-image: url('/img/tours/${booking.tour.imageCover}');`)
                 .col.col-1(data-label='Tour name')= `${booking.tour.name} Tour`
                 .col.col-2(data-label='Price')= `$${booking.price} `
                 .col.col-3(data-label='Actions')

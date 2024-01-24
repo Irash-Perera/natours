@@ -26,6 +26,62 @@
   box-shadow: 0 0.3em 1em -0.5em #14a73e98;
 }
 
+.update-review-btn {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.update-review-btn:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.update-review-btn:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ff5f5f; 
+  background: linear-gradient(0deg, rgba(255, 94, 94, 1) 0%, rgba(255, 138, 138, 1) 100%); /* Red gradient */
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #ff5f5f98; 
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.delete-btn:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #ff5f5f98; 
+}
+
+.delete-btn:active {
+  box-shadow: 0 0.3em 1em -0.5em #ff5f5f98; 
+}
+
 
 .review-post-btn {
   justify-self: center;

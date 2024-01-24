@@ -1333,6 +1333,12 @@ body {
   transform: translateY(-2px);
 }
 
+
+.responsive-table .table-row {
+  position: relative;
+  background-size: cover;
+}
+
 .section-reviewForm{
   background-color: #f7f7f7;
 }
