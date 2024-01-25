@@ -25,3 +25,21 @@ Welcome to Natours API Backend, a powerful system designed to manage and streaml
 **JWT**: Implementation of JSON Web Tokens for secure and stateless authentication.
 
 **Mongoose**: Elegant MongoDB object modeling for Node.js applications.
+
+
+#### Screenshots
+
+| Page                   | Screenshot                                  |
+|------------------------|---------------------------------------------|
+| Tour Overview Page     | ![Overview page](./screenshots/Overview_page.jpeg "Overview Page")             |
+| Tour Details Page      | ![Details page](./screenshots/Tour_page.jpeg "Tour Details Page")             |
+| Login Page             | ![Login page](./screenshots/Login_page.jpeg "Login")                          |
+| Sign Up Page           | ![Sign up page](./screenshots/Signup_page.jpeg "Sign Up Page")                |
+| User Profile Page      | ![Profile page](./screenshots/Account_page.jpeg "User Profile Page")          |
+| Booking Page           | ![Booking page](./screenshots/Booking_page.jpeg "Booking Page")               |
+| Welcome Mail           | ![Welcome mail](./screenshots/Welcome_mail.png "Welcome Mail")                 |
+| Password Reset Mail    | ![Password reset mail](./screenshots/Password_reset_mail.png "Password Reset Mail") |
+
+
+
+
