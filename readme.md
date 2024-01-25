@@ -2,7 +2,7 @@
 
 Welcome to Natours API Backend, a powerful system designed to manage and streamline tour operations for commercial tour organizing companies. This RESTful API provides robust functionality to handle various aspects of tour management, from creating, editing, and deleting tours to managing bookings and user authentication.
 
-#### Key Features:
+### Key Features:
 
 **Tour Management**: Create, update, and delete tour information, including details on destinations, schedules, pricing, and more.
 
@@ -14,7 +14,7 @@ Welcome to Natours API Backend, a powerful system designed to manage and streaml
 
 **Data Integrity**: Ensure data integrity and consistency through comprehensive validation and error handling.
 
-#### Technologies Used:
+### Technologies Used:
 
 **Node.js**: Powerful JavaScript runtime for building scalable and efficient backend applications.
 
@@ -27,7 +27,7 @@ Welcome to Natours API Backend, a powerful system designed to manage and streaml
 **Mongoose**: Elegant MongoDB object modeling for Node.js applications.
 
 
-#### Screenshots
+### Screenshots
 
 | Page                   | Screenshot                                  |
 |------------------------|---------------------------------------------|
@@ -39,6 +39,9 @@ Welcome to Natours API Backend, a powerful system designed to manage and streaml
 | Booking Page           | ![Booking page](./screenshots/Booking_page.jpeg "Booking Page")               |
 | Welcome Mail           | ![Welcome mail](./screenshots/Welcome_mail.png "Welcome Mail")                 |
 | Password Reset Mail    | ![Password reset mail](./screenshots/Password_reset_mail.png "Password Reset Mail") |
+
+
+
 
 
 
