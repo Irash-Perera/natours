@@ -76,7 +76,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
 
 exports.getMyReviews = catchAsync(async (req, res, next) => {
     const reviews = await Review.find({ user: req.user.id });
-    console.log(reviews)
+    // console.log(reviews)
     res.status(200).render('myReviews', {
         title: 'My reviews',
         reviews

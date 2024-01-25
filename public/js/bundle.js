@@ -12863,7 +12863,7 @@ if (reviewForm) {
             if (starGroup) {
               starGroup.addEventListener('click', function (e) {
                 rating = e.target.value;
-                console.log(review, rating);
+                // console.log(review, rating);
               });
             }
             _context3.next = 5;
